@@ -1,1 +1,92 @@
-i
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Java Jam Coffee House</title>
+    <meta name="description" content="CENG 311 Inclass Activity 1">
+    <meta charset="UTF-8">
+
+<body>
+
+    
+    <h1>JavaJam Coffee House</h1>
+    <header>
+        <table>
+            <tr>
+                <td><a href="#menu">Menu</a></td>
+                <td><a href="#music">Music</a></td>
+                <td><a href="#location">Location</a></td>
+            </tr>
+        </table>
+
+
+    </header>
+
+    <p>We are a gourmet coffee shop that serves snacks, coffee, tea, and soft drinks. Visit us to check out our:</p>
+
+
+    <header>
+        <h1 id="menu">Menu</h1>       
+    </header>
+    
+    <table>
+        <tr>
+            <th colspan="2">Coffee Selections</th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img src="https://t3.ftcdn.net/jpg/03/10/79/92/360_F_310799217_WKjejxtdTuEdP7lIKCnyR2tt7JmSsnYE.jpg" alt="Menu Image">
+            </td>
+        </tr>
+        <tr>
+            <td>Just Java</td>
+            <td>Regular house blend, decaffeinated coffee, or flavor of the day.<br>
+                Endless Cup $2.00</td>
+        </tr>
+        <tr>
+            <td>Cafe au Lait</td>
+            <td>House blended coffee infused into a smooth, steamed milk.<br>
+                <ul style="list-style-type: square">
+                    <li>Small $2.00</li>
+                    <li>Medium $4.00</li>
+                    <li>Large $6.00</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td> New Coffee</td>
+            <td> New Coffe description
+                <ul>
+                    <li>Small $2.00</li>
+                    <li>Medium $4.00</li>
+                    <li>Large $6.00</li>
+                </ul>
+            </td>
+            
+        </tr>
+    </table>
+
+    <header>
+        <h1 id="music">Music</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse odio augue, euismod non sapien mattis, ornare vestibulum eros. Nunc tellus lorem, hendrerit ut nisl vitae, dictum bibendum arcu.</p>
+    </header>
+        
+   
+
+    <header>
+        <h1 id="location">Location</h1>
+    </header>
+
+    <p>JavaJam is located at 8544 University City Blvd
+        Charlotte, NC 28213. See <a href="http://maps.google.com">Google Maps</a> for directions.</p>
+
+    <p><i>Copyright &copy; JavaJam Coffee House<br>
+            manager@javajam.com</i></p>
+
+    <a href="http://validator.w3.org/check?uri=referer">Validate</a>
+
+    <table></table>
+</body>
+
+</html>
