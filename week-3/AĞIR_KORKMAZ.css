@@ -46,3 +46,10 @@ tfoot
 tfoot tr td{
 	text-align: right;
 }
+
+
+.outline-of-table{
+	margin-top: 100px;
+	padding: 30px;
+	border: 1px solid black;
+}
