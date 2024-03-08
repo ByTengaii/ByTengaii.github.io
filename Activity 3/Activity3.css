@@ -1,0 +1,55 @@
+*{
+	box-sizing: border-box;
+
+}
+
+.advertisement
+{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width:150px;
+	height:150px; 
+	border-color:black;
+	border-width:2px; 
+	background-color:gray; 
+	color:white;
+}
+.header{
+	margin-left: 200px;
+	display: flex;
+	flex-direction: row;
+	width: 66%;
+}
+
+.content{
+	margin-top: 20px;	
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
+.image {
+	display: inline;
+	margin-right: 10px;
+}
+.image > img {
+	width: 300px;
+	float: left;
+	margin-right: 10px;
+}
+
+
+
+.main{
+	display: inline;
+}
+
+
+.logo{
+	padding-right: 30px;
+}
+
+.head{
+	width: 100%;
+	text-align: center;
+}
