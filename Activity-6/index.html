@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Button Position</title>
+    <style>
+        #randomButton {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="randomButton" onclick="moveButton()">Click on</button>
+
+    <script>
+        var counter = 0;
+        var negativePoints = 0;
+        var timeoutId;
+        var level = 1;
+        var timeLimit = 500; // 3 seconds
+        
+        function moveButton() {
+            clearTimeout(timeoutId); // clear the previous timeout
+
+            var x = Math.floor(Math.random() * window.innerWidth);
+            var y = Math.floor(Math.random() * window.innerHeight);
+
+            var button = document.getElementById('randomButton');
+            button.style.width = "150px";
+            button.style.height = "100px";
+            button.style.fontSize = "20px";
+            button.style.backgroundColor = 'blue'; // change the button's background color to blue
+            button.style.color = 'white'; // change the button's text color to white
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+
+            counter++;
+            if (counter === 3) {
+                level++;
+                alert("You passed level " + (level - 1) + ". You missed " + negativePoints + " times. Now on level " + level);
+                counter = 0; // reset the counter
+                negativePoints = 0; // reset the negative points
+                timeLimit = Math.max((timeLimit - 100), 100); // make the button move twice as fast, but not faster than every 200ms
+            }
+
+            timeoutId = setTimeout(moveButtonTimeout, timeLimit);
+        }
+        function moveButtonTimeout() {
+            moveButtonWithoutCounterIncrement(); // move the button
+            negativePoints++; // increment negative points
+
+            // Call moveButtonWithoutCounterIncrement again after timeLimit
+            timeoutId = setTimeout(moveButtonTimeout, timeLimit);
+        }
+
+        function moveButtonWithoutCounterIncrement() {
+            var x = Math.floor(Math.random() * window.innerWidth);
+            var y = Math.floor(Math.random() * window.innerHeight);
+
+            var button = document.getElementById('randomButton');
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+
+        // Call moveButton initially to start the game
+        moveButton();
+
+
+    </script>
+    <script>
+       
+    </script>
+</body>
+
+</html>
