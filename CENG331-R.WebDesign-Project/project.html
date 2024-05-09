@@ -7,6 +7,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="./js/jquery/jquery.js" type="text/javascript" defer></script>
+    <script
+      src="./js/jquery/plugins/jQuery-Selectric/public/jquery.selectric.js"
+      type="text/javascript"
+      defer
+    ></script>
+
     <script
       src="./js/components/Header.js"
       type="text/javascript"
@@ -17,7 +24,21 @@
       type="text/javascript"
       defer
     ></script>
+    <script
+      src="./js/components/TodoCard.js"
+      type="text/javascript"
+      defer
+    ></script>
+
+    <script src="./js/script/project.js" type="text/javascript" defer></script>
+
+    <link rel="stylesheet" href="./css/components/todocard.css" />
     <link rel="stylesheet" href="./css/index.css" />
+    <link
+      rel="stylesheet"
+      href="./js/jquery/plugins/jQuery-Selectric/public/selectric.css"
+    />
+
     <title>Responsive Web Design Project</title>
   </head>
   <body>
@@ -32,27 +53,130 @@
           Return to Dashboard
         </button>
 
-        <button class="bg-orange text-white" onclick="alert('Adding new ToDo')">
+        <button class="bg-orange text-white" onclick="toggleForm()">
           Add New To Do
         </button>
       </div>
       <div id="todo_panel">
+        <!-- Add New Todo Form -->
+        <div
+          id="todo_list-modal_wrapper-addTodo"
+          class="todo_list-modal-wrapper"
+        >
+          <form id="todo_list-add_form">
+            <label for="todoName">Task Name:</label>
+            <input type="text" id="todoName" name="todoName" required />
+
+            <label for="todoName">Task Description:</label>
+            <input
+              type="text"
+              id="todoDescription"
+              name="todoDescription"
+              required
+            />
+
+            <label for="projectImage">Status:</label>
+            <select id="status" name="status" required>
+              <option value="todo">To Do</option>
+              <option value="inprogress">In Progress</option>
+              <option value="inreview">In Review</option>
+              <option value="done">Done</option>
+            </select>
+            <button type="submit">Add New Todo</button>
+          </form>
+        </div>
+
         <!-- Management List -->
         <div class="todo_list-continer">
           <h2>To Do</h2>
-          <div class="todo_list todo-red">Todo Lists</div>
+          <div class="todo_list todo-red">
+            Todo Lists
+            <div
+              id="todo-list"
+              class="todo_list-list"
+              ondragover="allowDrop(event)"
+              ondrop="drop(event)"
+            >
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+            </div>
+          </div>
         </div>
         <div class="todo_list-continer">
           <h2>In Progress</h2>
-          <div class="todo_list todo-blue">In Progress Lists</div>
+          <div class="todo_list todo-blue">
+            In Progress Lists
+
+            <div
+              id="inprogress-list"
+              class="todo_list-list"
+              ondragover="allowDrop(event)"
+              ondrop="drop(event)"
+            >
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+            </div>
+          </div>
         </div>
         <div class="todo_list-continer">
           <h2>In Review</h2>
-          <div class="todo_list todo-orange">In Review Lists</div>
+          <div class="todo_list todo-orange">
+            In Review Lists
+
+            <div
+              id="inreview-list"
+              class="todo_list-list"
+              ondragover="allowDrop(event)"
+              ondrop="drop(event)"
+            >
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+            </div>
+          </div>
         </div>
         <div class="todo_list-continer">
           <h2>Done</h2>
-          <div class="todo_list todo-green">Done Lists</div>
+          <div class="todo_list todo-green">
+            Done Lists
+
+            <div
+              id="done-list"
+              class="todo_list-list"
+              ondragover="allowDrop(event)"
+              ondrop="drop(event)"
+            >
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+              <todo-card></todo-card>
+            </div>
+          </div>
         </div>
       </div>
     </section>
